@@ -9,19 +9,28 @@
 </head>
 <body>
 
-  <!-- Sections will be injected here -->
+  <!-- Static Header / Navbar -->
   <div id="header"></div>
-  <div id="hero"></div>
-  <div id="about"></div>
-  <div id="experience"></div>
-  <div id="skills"></div>
-  <div id="certifications"></div>
-  <div id="projects"></div>
-  <div id="hard-skills"></div>
-  <div id="contact"></div>
+
+
+
+  <!-- GLOBAL PAGE HERO -->
+  <div id="page-hero" class="page-hero hidden">
+    <div class="page-hero-content">
+      <h1 class="page-title"></h1>
+      <p class="page-subtitle"></p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT: dynamically loaded pages -->
+  <main id="page-content">
+    <!-- Default Home page (Squares for navigation) will load here -->
+  </main>
+
+  <!-- Static Footer -->
   <div id="footer"></div>
 
   <script src="js/main.js"></script>
-  
+  <script src="js/contact-form.js"></script>
 </body>
 </html>

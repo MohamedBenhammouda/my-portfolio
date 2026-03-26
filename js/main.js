@@ -1,55 +1,5 @@
 /* =========================
-   HARD SKILLS COLLAPSIBLE
-========================= */
-function initHardSkills(scope = document) {
-  const items = scope.querySelectorAll(".hard-skills .skill-item");
-
-  items.forEach(item => {
-    const btn = item.querySelector(".skill-btn");
-    if (!btn) return;
-
-    btn.addEventListener("click", () => {
-      const isOpen = item.classList.contains("open");
-
-      // Optional: close siblings (only one open at a time)
-      items.forEach(i => i.classList.remove("open"));
-      if (!isOpen) item.classList.add("open");
-
-      // Update aria-expanded for accessibility
-      items.forEach(i => {
-        const b = i.querySelector(".skill-btn");
-        if (b) b.setAttribute("aria-expanded", i.classList.contains("open"));
-      });
-    });
-  });
-}
-
-/* =========================
-   SECTION LOADER INTEGRATION
-========================= */
-const loadSection = async (id, file, callback) => {
-  try {
-    const res = await fetch(`sections/${file}`);
-    const html = await res.text();
-
-    const container = document.getElementById(id);
-    if (!container) return;
-
-    container.innerHTML = html;
-
-    // Initialize reveal animations for new content
-    observeReveals(container);
-
-    // Initialize callbacks (skills, certifications, etc.)
-    if (callback) callback(container);
-
-  } catch (err) {
-    console.error(`Error loading ${file}`, err);
-  }
-};
-
-/* =========================
-   REVEAL ANIMATIONS
+   GLOBAL REVEAL OBSERVER
 ========================= */
 const revealObserver = new IntersectionObserver(
   entries => {
@@ -70,14 +20,37 @@ function observeReveals(scope = document) {
 }
 
 /* =========================
+   HARD SKILLS COLLAPSIBLE
+========================= */
+function initHardSkills(scope) {
+  const items = scope.querySelectorAll(".hard-skills .skill-item");
+
+  items.forEach(item => {
+    const btn = item.querySelector(".skill-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      items.forEach(i => i.classList.remove("open"));
+      if (!isOpen) item.classList.add("open");
+
+      items.forEach(i => {
+        const b = i.querySelector(".skill-btn");
+        if (b) b.setAttribute("aria-expanded", i.classList.contains("open"));
+      });
+    });
+  });
+}
+
+/* =========================
    CERTIFICATIONS CAROUSEL
 ========================= */
-function initCertCarousel(scope = document) {
+function initCertCarousel(scope) {
   const carousel = scope.querySelector(".cert-carousel");
   if (!carousel) return;
 
-  let isDragging = false;
-  let startX, scrollLeft;
+  let isDragging = false, startX, scrollLeft;
 
   carousel.addEventListener("mousedown", e => {
     isDragging = true;
@@ -104,68 +77,166 @@ function initCertCarousel(scope = document) {
 /* =========================
    PROJECT FILTERING
 ========================= */
-document.addEventListener("click", e => {
-  if (!e.target.matches("[data-filter]")) return;
+function initProjectFilters(scope) {
+  scope.querySelectorAll("[data-filter]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
 
-  const filter = e.target.dataset.filter;
+      scope.querySelectorAll(".project-filters button")
+        .forEach(b => b.classList.remove("active"));
 
-  document.querySelectorAll(".project-filters button")
-    .forEach(btn => btn.classList.remove("active"));
+      btn.classList.add("active");
 
-  e.target.classList.add("active");
-
-  document.querySelectorAll(".project-card").forEach(card => {
-    card.style.display =
-      filter === "all" || card.dataset.category === filter
-        ? "block"
-        : "none";
+      scope.querySelectorAll(".project-card").forEach(card => {
+        card.style.display =
+          filter === "all" || card.dataset.category === filter
+            ? "block"
+            : "none";
+      });
+    });
   });
-});
+}
 
 /* =========================
-   THEME TOGGLE
+   DYNAMIC PAGE LOADER (FINAL CLEAN)
+========================= */
+function loadPage(page) {
+  const container = document.getElementById("page-content");
+  if (!container) return;
+
+  fetch(`pages/${page}.html`)
+    .then(res => res.text())
+    .then(html => {
+      container.innerHTML = html;
+
+      /* =========================
+         PAGE HERO CONTROL
+      ========================= */
+      const hero = document.getElementById("page-hero");
+      const title = hero.querySelector(".page-title");
+      const subtitle = hero.querySelector(".page-subtitle");
+
+      const pageConfig = {
+        about: {
+          title: "About Me",
+          subtitle: "Get to know my background, mindset, and journey"
+        },
+
+        experience: {
+          title: "Experience",
+          subtitle: "My professional journey & impact"
+        },
+        skills: {
+          title: "Skills",
+          subtitle: "Soft skills,Hard skills, mindset & strengths"
+        },
+        "hard-skills": {
+          title: "Technical Skills",
+          subtitle: "Blue Team, DevSecOps & Security expertise"
+        },
+        projects: {
+          title: "Projects",
+          subtitle: "Real-world implementations & innovation"
+        },
+        certifications: {
+          title: "Certifications",
+          subtitle: "Continuous learning & achievements"
+        },
+        contact: {
+          title: "Contact",
+          subtitle: "Let’s connect and collaborate"
+        },
+        education: {
+          title: "Education",
+          subtitle: "Academic background & achievements"
+        }
+      };
+
+      if (!pageConfig[page]) {
+        hero.classList.add("hidden");
+      } else {
+        hero.classList.remove("hidden");
+
+        // Title (instant)
+        title.textContent = pageConfig[page].title;
+
+        // Subtitle (typing effect)
+        typeWriter(subtitle, pageConfig[page].subtitle, 25);
+      }
+
+      /* =========================
+         PAGE-SPECIFIC FEATURES
+      ========================= */
+      if (page === "hard-skills") initHardSkills(container);
+      if (page === "certifications") initCertCarousel(container);
+      if (page === "projects") initProjectFilters(container);
+
+      /* =========================
+         ANIMATIONS
+      ========================= */
+      observeReveals(container);
+    })
+    .catch(err => console.error(`Error loading page: ${page}`, err));
+}
+/* =========================
+   NAVIGATION
 ========================= */
 document.addEventListener("click", e => {
-  if (!e.target.matches("#theme-toggle")) return;
+  const link = e.target.closest(".nav-link");
+  if (!link) return;
 
-  document.body.classList.toggle("light");
-  e.target.textContent =
-    document.body.classList.contains("light") ? "🌞" : "🌙";
+  e.preventDefault();
+  const page = link.dataset.page;
+  if (page) loadPage(page);
 });
 
+
 /* =========================
-   NAV TOGGLE
+   NAV MENU (MOBILE)
 ========================= */
 document.addEventListener("click", e => {
   if (!e.target.matches(".nav-toggle")) return;
+
   document.querySelector(".nav-menu")?.classList.toggle("active");
 });
 
 /* =========================
-   LOAD ALL SECTIONS
-========================= */
-const initPortfolio = () => {
-  loadSection("header", "header.html");
-  loadSection("hero", "hero.html");
-  loadSection("about", "about.html");
-  loadSection("education", "education.html");
-  loadSection("experience", "experience.html");
-  loadSection("skills", "skills.html");
-  loadSection("certifications", "certifications.html", initCertCarousel);
-  loadSection("projects", "projects.html");
-  loadSection("hard-skills", "hard-skills.html", initHardSkills);
-  loadSection("contact", "contact.html");
-  loadSection("footer", "footer.html");
-};
-
-/* =========================
-   INITIALIZE EVERYTHING
+   INIT APP
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  initPortfolio();
-  observeReveals(); // static content outside sections
+  // Load header
+  fetch("sections/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    });
+
+  // Load footer
+  fetch("sections/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+
+  // ✅ Default page = ABOUT
+  loadPage("about");
 });
-document.querySelector('.contact-form').addEventListener('submit', e => {
-  e.preventDefault();
-  alert("Thanks for reaching out! I'll contact you soon.");
-});
+
+
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
+function typeWriter(element, text, speed = 30) {
+  let i = 0;
+  element.textContent = "";
+
+  function typing() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
+}
