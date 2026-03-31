@@ -117,10 +117,7 @@ function loadPage(page) {
       const subtitle = hero.querySelector(".page-subtitle");
 
       const pageConfig = {
-        about: {
-          title: "About Me",
-          subtitle: "Get to know my background, mindset, and journey"
-        },
+        about: null,
 
         experience: {
           title: "Experience",
@@ -152,17 +149,17 @@ function loadPage(page) {
         }
       };
 
-      if (!pageConfig[page]) {
-        hero.classList.add("hidden");
-      } else {
-        hero.classList.remove("hidden");
+      // Hide hero for About page
+        if (page === "about") {
+          hero.classList.add("hidden");
+        } else if (!pageConfig[page]) {
+          hero.classList.add("hidden");
+        } else {
+          hero.classList.remove("hidden");
 
-        // Title (instant)
-        title.textContent = pageConfig[page].title;
-
-        // Subtitle (typing effect)
-        typeWriter(subtitle, pageConfig[page].subtitle, 25);
-      }
+          title.textContent = pageConfig[page].title;
+          typeWriter(subtitle, pageConfig[page].subtitle, 25);
+        }
 
       /* =========================
          PAGE-SPECIFIC FEATURES

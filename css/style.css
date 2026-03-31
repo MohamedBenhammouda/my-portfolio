@@ -5,120 +5,6 @@ body {
 
 
 
-/* ===== NAVBAR ===== */
-.header {
-  background-color: #7ea9ff; /* semi-transparent white */
-  backdrop-filter: blur(8px); /* subtle frosted effect */
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* soft shadow */
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #333333;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-menu li a {
-  text-decoration: none;
-  color: #333333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-menu li a:hover {
-  color: #a0c4e8; /* soft warm accent on hover */
-}
-
-/* ===== MOBILE RESPONSIVE NAVBAR ===== */
-.nav-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    flex-direction: column;
-    width: 200px;
-    display: none;
-    gap: 1rem;
-    padding: 1cm;
-    border-radius: 0 0 8px 8px;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-}
-
-/*about me*/
-
-.about {
-  background-color: #d0e4f6;
-  padding: 5rem 5rem;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 3fr 0.8fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.about-quote {
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #2a3d66;
-  border-left: 4px solid #a0c4e8;
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.about-title {
-  font-size: 1.6rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.about-desc {
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.about-edu {
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
 .accreditations {
   display: flex;
   gap: 0.8rem;
@@ -973,4 +859,7 @@ body {
   .page-hero-content {
     padding: 40px 20px;
   }
+}
+.hidden {
+  display: none !important;
 }

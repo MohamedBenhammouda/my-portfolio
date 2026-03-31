@@ -1,0 +1,119 @@
+
+/* =========================
+   ABOUT HERO IMAGE
+========================= */
+
+.about-hero {
+  position: sticky;
+  width: 1540px;
+  height: 500px;
+  z-index: 1000;
+  border-radius: 12px;
+  margin-top: -40px;
+  overflow: hidden;
+
+  display: flex;
+
+  /* 75% black / 25% blue */
+  background: linear-gradient(to right, var(--accent-main) 75%, var(--accent-hover) 75%);
+}
+/* LEFT TEXT */
+.about-text {
+  width: 75%;
+  padding: 80px 60px; /* more breathing space */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-hero img {
+  width: 25%;
+  margin-left: auto; /* pushes it to the right */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle hover effect (premium feel) */
+.about-hero img:hover {
+  transform: scale(1.01);
+}
+
+/* TITLE */
+.about-text h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* SUBTITLE */
+.about-text h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* PARAGRAPH */
+.about-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 750px; /* 🔥 prevents overlap into image */
+  color: #fff;
+}
+.about {
+  background-color: #d0e4f6;
+  padding: 5rem 5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #2a3d66;
+  border-left: 4px solid #a0c4e8;
+  padding-left: 1rem;
+  margin-top: 10rem;
+  margin-bottom: 1.5rem;
+}
+
+.socials {
+  position: absolute;
+  bottom: 30px;
+  left: 60px; /* same as padding for alignment */
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.socials span {
+  font-size: 14px;
+  color: #ffff;
+}
+
+.socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.socials img {
+  width: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.socials a:hover {
+  background: var(--accent-main);
+  transform: translateY(-3px);
+}
