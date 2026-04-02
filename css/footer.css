@@ -1,0 +1,144 @@
+.footer {
+  background: #2a3d66;
+  color: #fff;
+  padding: 6px 5% 30px;
+  margin-top: 100px ;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+
+;}
+
+/* GRID */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+
+  align-items: center;     /* 🔥 vertical alignment */
+  justify-items: center;   /* 🔥 horizontal alignment */
+  text-align: center;      /* 🔥 center text inside */
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center everything inside */
+}
+
+/* LOGO */
+.logo-col {
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+
+  position: relative; /* keep tooltip working */
+}
+/* Tooltip */
+.nav-logo::after {
+  content: "Mohamed Ben Hamouda";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.nav-logo:hover::after {
+  opacity: 1;
+}
+
+/* COLUMNS */
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+
+  text-align: left;   /* 🔥 forces text left */
+  width: 100%;        /* 🔥 take full column width */
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+/* SOCIALS */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-socials img {
+  width: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* WhatsApp */
+.whatsapp {
+  font-size: 14px;
+  color: #25D366;
+}
+
+/* FORM */
+.contact-form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background:  #2a3d66;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 15px;
+
+  gap: 1rem;
+}
+
+.contact-form-footer input,
+.contact-form-footer textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+    background:#fff;
+
+  
+}
+
+.contact-form-footer button {
+  padding: 10px;
+  border: none;
+  background:#fff;
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+}
+.form-col {
+  width: 100%;
+  max-width: 220px;
+}

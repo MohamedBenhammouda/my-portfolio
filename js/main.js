@@ -125,7 +125,7 @@ function loadPage(page) {
         },
         skills: {
           title: "Skills",
-          subtitle: "Soft skills,Hard skills, mindset & strengths"
+          subtitle: "Soft skills & Hard skills "
         },
         "hard-skills": {
           title: "Technical Skills",
@@ -172,6 +172,7 @@ function loadPage(page) {
          ANIMATIONS
       ========================= */
       observeReveals(container);
+      window.scrollTo({ top: 1, behavior: 'smooth' });
     })
     .catch(err => console.error(`Error loading page: ${page}`, err));
 }
@@ -187,7 +188,13 @@ document.addEventListener("click", e => {
   if (page) loadPage(page);
 });
 
-
+document.querySelectorAll('.footer-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const page = link.dataset.page;
+    if (page) loadPage(page);
+  });
+});
 /* =========================
    NAV MENU (MOBILE)
 ========================= */

@@ -1,0 +1,128 @@
+.soft-skills .skill-item {
+  background-color: #f0f7fc;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  margin: 1.8rem;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.soft-skills .skill-item:hover {
+  transform: translateY(-3px);
+}
+
+.skill-title {
+  font-size: 1.2rem;
+  color: #2a3d66;
+  margin-bottom: 0.8rem;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Section base */
+.hard-skills {
+  background-color: var(--bg-main);
+}
+.hard-skills .section-subtle {
+  color: var(--text-secondary);
+  max-width: 780px;
+  margin: 0 auto 1.2rem;
+}
+
+/* Grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+@media (max-width: 900px){
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Skill category card */
+.skill-category {
+  background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(15,35,70,0.06);
+}
+
+/* Titles */
+.category-title {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+/* Skill list & items */
+.skill-list { list-style: none; margin: 0; padding: 0; display:block; }
+.skill-item { margin-bottom: 0.8rem; }
+
+/* Collapsible skill button */
+.skill-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-lighter);
+  border: 1px solid var(--accent-subtle);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 220ms ease, transform 220ms ease, border-color 220ms ease;
+  text-align: left;
+}
+
+.skill-btn:hover {
+  background: var(--accent-warm);
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: var(--accent-hover);
+}
+
+.skill-tag {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-left: 0.6rem;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.skill-item.open .skill-btn .skill-tag {
+  background: var(--accent-warm);
+  color: #fff;
+}
+
+/* Collapsible body */
+.skill-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 360ms cubic-bezier(.2,.9,.3,1), opacity 260ms ease;
+  opacity: 0;
+  padding: 0 0.6rem;
+}
+
+.skill-item.open .skill-body {
+  max-height: 420px;
+  opacity: 1;
+  margin-top: 0.6rem;
+  color: var(--text-secondary);
+}
+
+/* Highlight row */
+.skills-highlight {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
