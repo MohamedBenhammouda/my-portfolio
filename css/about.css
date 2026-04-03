@@ -18,7 +18,7 @@
   position: relative; /* sticky if you want, but for centering relative works */
   width: 100%;       /* instead of 1500px */
   max-width: 1200px; /* optional: constrain max width */
-  height: 400px;
+  height: 450px;
   margin: 0 auto;    /* 🔥 centers horizontally */
   border-radius: 12px;
   overflow: hidden;
