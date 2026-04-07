@@ -1,105 +1,127 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: inherit;
+}
 
 /* =========================
-   ABOUT HERO IMAGE
+   ABOUT SECTION
 ========================= */
 .about {
   background-color: #d0e4f6;
-  padding: 5rem 5rem;
+    padding: 100px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
 }
 
 .about-grid {
-  display: flex; /* simpler than grid for two columns */
-  justify-content: center; /* center hero horizontally */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
 }
 
+/* HERO CONTAINER */
 .about-hero {
-  position: relative; /* sticky if you want, but for centering relative works */
-  width: 100%;       /* instead of 1500px */
-  max-width: 1200px; /* optional: constrain max width */
-  height: 450px;
-  margin: 0 auto;    /* 🔥 centers horizontally */
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 700px;
+
+  margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
 
   display: flex;
-  background: linear-gradient(to right, var(--accent-main) 75%, var(--accent-hover) 75%);
+  align-items: center;
+
+  background: linear-gradient(to right,
+      var(--accent-main) 50%,
+      var(--accent-hover) 50%);
 }
-/* LEFT TEXT */
+
+/* TEXT */
 .about-text {
-  width: 75%;
-  padding: 80px 60px; /* more breathing space */
+  width: 50%;
+  padding: 4vw;
+  max-width: 800px;
+
   color: #fff;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.about-hero img {
-  width: 25%;
-  margin-left: auto; /* pushes it to the right */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* Subtle hover effect (premium feel) */
-.about-hero img:hover {
-  transform: scale(1.01);
-}
-
-/* TITLE */
 .about-text h1 {
-  font-size: 42px;
+  font-size: clamp(28px, 4vw, 42px);
   margin-bottom: 10px;
   font-weight: bold;
-  color: #fff;
 }
 
-/* SUBTITLE */
 .about-text h2 {
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 22px);
   margin-bottom: 20px;
-  color: #fff;
   letter-spacing: 1px;
 }
 
-/* PARAGRAPH */
 .about-text p {
   font-size: 15px;
   line-height: 1.7;
-  max-width: 750px; /* 🔥 prevents overlap into image */
-  color: #fff;
+  max-width: 700px;
 }
 
+/* IMAGE */
+.about-hero img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: auto;
 
+  transition: transform 0.4s ease;
+}
 
+.about-hero img:hover {
+  transform: scale(1.02);
+}
+
+/* SOCIALS */
 .socials {
   position: absolute;
   bottom: 30px;
-  left: 60px; /* same as padding for alignment */
+  left: 4vw;
 
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .socials span {
   font-size: 14px;
-  color: #ffff;
+  color: #fff;
 }
 
 .socials a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transition: 0.3s ease;
 }
 
 .socials img {
-  width: 18px;
+  width: 50px;
   filter: brightness(0) invert(1);
 }
 
@@ -107,13 +129,16 @@
   background: var(--accent-main);
   transform: translateY(-3px);
 }
+
+/* =========================
+   SERVICES
+========================= */
 .services {
-  padding: 100px 5%;
+  padding: 100px 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* HEADER */
 .services-header h3 {
   color: var(--accent-main);
   font-size: 18px;
@@ -137,7 +162,7 @@
   margin-top: 50px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 🔥 better layout */
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
@@ -145,7 +170,7 @@
 .service-card {
   padding: 30px;
   border-radius: 12px;
-  background:  var(--accent-main);
+  background: var(--accent-main);
   color: #fff;
 
   transition: 0.3s ease;
@@ -158,37 +183,29 @@
 
 .service-card p {
   font-size: 14px;
-  color: #fff;
   line-height: 1.5;
 }
 
-/* HOVER 🔥 */
 .service-card:hover {
   transform: translateY(-5px);
-  background: var(--accent-main);
-  color: #fff;
 }
 
-.service-card:hover p {
-  color: #fff;
-}
-
-
-
-/* SECTION */
+/* =========================
+   COMPANIES
+========================= */
 .companies {
-  margin: 80px 5%;
-  color: #fff;
+padding: 100px 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .companies h3 {
   font-size: 28px;
   margin-bottom: 30px;
   color: #2a3d66;
-  padding-bottom: 100px  ;
 }
 
-/* HORIZONTAL SCROLL */
+/* SCROLL */
 .companies-slider {
   display: flex;
   gap: 25px;
@@ -196,7 +213,6 @@
   padding-bottom: 10px;
 }
 
-/* hide scrollbar (optional) */
 .companies-slider::-webkit-scrollbar {
   display: none;
 }
@@ -204,44 +220,93 @@
 /* CARD */
 .company-card {
   position: relative;
-  min-width: 250px;
-  max-width: 500px;
-  height: 180px;
+  min-width: 220px;
+  max-width: 300px;
+  height: 160px;
+
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
 
   background: #111;
+
+  transition: 0.3s ease;
 }
 
-/* IMAGE */
 .company-card img {
-  background-color: #d0e4f6;
   width: 100%;
   height: 100%;
-  padding-top: 1px;
-  padding-right: 10px;
-  object-fit: contain; /* 🔹 changed from cover */
-  object-position: center; /* 🔹 centers the image */}
+  object-fit: contain;
+  object-position: center;
+  background-color: #d0e4f6;
+}
 
 .company-card .tag {
   position: absolute;
   top: 10px;
   right: 10px;
 
-  padding: 6px 12px ;
+  padding: 6px 12px;
   font-size: 12px;
 
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
 
-  border-radius: 20px; /* 🔥 rounded */
+  border-radius: 20px;
   backdrop-filter: blur(6px);
 }
 
-/* HOVER EFFECT 🔥 */
 .company-card:hover {
-  transform: translateY(-1px);
-  transition: 0.3s ease;
+  transform: translateY(-3px);
 }
 
+/* =========================
+   RESPONSIVE 🔥
+========================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .about-hero img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .socials {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .services {
+    padding: 80px 1rem;
+  }
+
+  .companies {
+    margin: 60px 1rem;
+  }
+}

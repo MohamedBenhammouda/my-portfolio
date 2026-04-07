@@ -1,17 +1,15 @@
 /* =========================
    HEADER / NAVBAR STYLES
 ========================= */
-
 .header {
-  background-color: #7ea9ff; /* calm blue background */
-  backdrop-filter: blur(8px);
+  background-color: #7ea9ff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  margin: 5%; 
-  padding: 0.5rem 1.5rem;
+  margin: 3%;
+  padding: 2rem 1.5rem;
 }
 
 .nav {
@@ -24,29 +22,31 @@
 }
 
 /* ---------------------
-   Logo in the center
+   Logo — centered
 --------------------- */
 .nav-logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffffff;
-  text-align: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
+  /* so it doesn't block clicks */
 }
 
 /* ---------------------
-   Navigation Links
+   Desktop nav links
 --------------------- */
 .nav-left,
 .nav-right {
   display: flex;
   gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Assign left and right links separately */
 .nav-left li a,
 .nav-right li a {
   text-decoration: none;
@@ -57,59 +57,105 @@
 
 .nav-left li a:hover,
 .nav-right li a:hover {
-  color: #c3dbff; /* subtle hover effect */
+  color: #c3dbff;
 }
 
 /* ---------------------
-   Place left and right sides
---------------------- */
-.nav-left {
-  margin-left: 0;
-}
-
-.nav-right {
-  margin-right: 0;
-}
-
-/* ---------------------
-   Mobile Hamburger Menu
+   Hamburger toggle
 --------------------- */
 .nav-toggle {
   display: none;
+  background: none;
+  border: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: #ffffff;
+  padding: 4px 8px;
+  margin-left: auto;
+  /* push to the right */
+  z-index: 10;
 }
 
 /* ---------------------
-   Responsive
+   Mobile dropdown menu
+--------------------- */
+.nav-menu {
+  display: none;
+  /* hidden by default */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  flex-direction: column;
+  gap: 0;
+
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 200px;
+
+  background-color: #7ea9ff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.nav-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Show when active */
+.nav-menu.active {
+  display: flex;
+}
+
+/* ---------------------
+   Responsive breakpoints
 --------------------- */
 @media (max-width: 992px) {
+
   .nav-left,
   .nav-right {
-    display: none; /* hide desktop links */
-  }
-
-  .nav-menu.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(126, 169, 255, 0.95);
-    width: 200px;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 12px 12px;
+    display: none;
   }
 
   .nav-toggle {
     display: block;
   }
+
+  .nav-logo {
+    /* On mobile, shift logo left since toggle is on the right */
+    position: static;
+    transform: none;
+    flex: 1;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
   .header {
-    margin: 1rem 1rem; /* smaller margins on small screens */
+    margin: 0.75rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.4rem;
   }
 }

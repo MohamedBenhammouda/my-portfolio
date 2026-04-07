@@ -19,6 +19,28 @@ function observeReveals(scope = document) {
   ).forEach(el => revealObserver.observe(el));
 }
 
+
+// Hamburger toggle
+document.addEventListener('click', function (e) {
+  const toggle = e.target.closest('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (!menu) return;
+
+  if (toggle) {
+    menu.classList.toggle('active');
+  } else if (!e.target.closest('.nav-menu')) {
+    // Close when clicking outside
+    menu.classList.remove('active');
+  }
+});
+
+// Close menu when a nav link is clicked
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('nav-link')) {
+    const menu = document.querySelector('.nav-menu');
+    if (menu) menu.classList.remove('active');
+  }
+});
 /* =========================
    HARD SKILLS COLLAPSIBLE
 ========================= */
