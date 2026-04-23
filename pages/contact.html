@@ -1,97 +1,107 @@
 <section id="contact" class="section contact">
-  <div class="container contact-container reveal-fade">
+  <div class="container">
 
-    <!-- Section Title -->
-    <h2 class="section-title">Let’s Connect</h2>
-    <p class="section-subtle">
-      I’m always open to collaboration, questions, or just a friendly hello. Reach me through any of the channels below.
-    </p>
+    <div class="contact-section-wrap">
 
-    <!-- Contact Details Block -->
-    <div class="contact-block reveal-left">
+      <!-- LEFT: contact details -->
+      <div class="reveal-left">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtle" style="margin-bottom:2rem;">
+          I'm always open to collaboration, questions, or just a friendly hello.
+        </p>
 
-      <!-- Contact Item Template -->
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/mail.svg" alt="Email Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>Email:</strong> <a href="mailto:mohamed.benhamouda@medtech.tn">mohamed.benhamouda@medtech.tn</a></p>
-          <p><strong>Email 2:</strong> <a href="mailto:alternative.email@example.com">ezz.bnhammouda@gmail.com</a></p>
+        <div class="contact-block">
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/mail.svg" alt="Email">
+            </div>
+            <div class="contact-info">
+              <p><strong>Email</strong></p>
+              <p><a href="mailto:ezz.bnhammouda@gmail.com">ezz.bnhammouda@gmail.com</a></p>
+              <p><a href="mailto:mohamed.benhamouda@medtech.tn">mohamed.benhamouda@medtech.tn</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/phone.svg" alt="Phone">
+            </div>
+            <div class="contact-info">
+              <p><strong>Phone / WhatsApp</strong></p>
+              <p><a href="tel:+21699218071">+216 99 218 071</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/github.svg" alt="GitHub">
+            </div>
+            <div class="contact-info">
+              <p><strong>GitHub</strong></p>
+              <p><a href="https://github.com/MohamedBenhammouda" target="_blank"
+                  rel="noopener noreferrer">github.com/MohamedBenhammouda</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+            </div>
+            <div class="contact-info">
+              <p><strong>LinkedIn</strong></p>
+              <p><a href="https://linkedin.com/in/mohamed-benhamouda" target="_blank"
+                  rel="noopener noreferrer">linkedin.com/in/mohamed-benhamouda</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/facebook.svg" alt="Facebook">
+            </div>
+            <div class="contact-info">
+              <p><strong>Facebook</strong></p>
+              <p><a href="https://www.facebook.com/mohamed.benhamouda.39566" target="_blank"
+                  rel="noopener noreferrer">facebook.com/mohamed.benhamouda</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <img src="assets/icons/instagram.svg" alt="Instagram">
+            </div>
+            <div class="contact-info">
+              <p><strong>Instagram</strong></p>
+              <p><a href="https://www.instagram.com/hamma_benhamouda/" target="_blank"
+                  rel="noopener noreferrer">@hamma_benhamouda</a></p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/phone.svg" alt="Phone Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>Phone / WhatsApp:</strong> <a href="tel:+21699218071">+216 99 218 071</a></p>
-        </div>
+      <!-- RIGHT: contact form -->
+      <div class="contact-form-container reveal-right">
+        <form id="contactForm" class="contact-form" novalidate>
+          <h2 class="section-title">Send a Message</h2>
+
+          <div class="form-group">
+            <input type="text" name="user_name" placeholder="Your Name" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" name="user_email" placeholder="Your Email" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <textarea name="message" rows="6" placeholder="Your Message…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+          <p id="contactMessage" class="contact-feedback" aria-live="polite"></p>
+        </form>
       </div>
 
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/github.svg" alt="GitHub Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>GitHub:</strong> <a href="https://github.com/MohamedBenhammouda" target="_blank">github.com/MohamedBenhammouda</a></p>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mohamed-benhamouda" target="_blank">linkedin.com/in/mohamed-benhamouda</a></p>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/facebook.svg" alt="Facebook Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>Facebook:</strong> <a href="https://www.facebook.com/mohamed.benhamouda.39566">facebook.com/mohamed.benhamouda</a></p>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">
-          <img src="assets/icons/instagram.svg" alt="Instagram Icon">
-        </div>
-        <div class="contact-info">
-          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/hamma_benhamouda/">hamma_benhamouda</a></p>
-        </div>
-      </div>
-
-    </div> <!-- end contact-block -->
-
-  </div>
-  <!-- CONTACT FORM -->
-  <div  class="contact-form-container reveal-right">
-    <form id="contactForm" action="https://yourserver.com/api/contact" method="POST" class="contact-form">
-      <h2 class="section-title">Contact Me</h2>
-
-      <div class="form-group">
-        <input type="text" name="user_name" placeholder="Your Name" required>
-      </div>
-
-      <div class="form-group">
-        <input type="email" name="user_email" placeholder="Your Email" required>
-      </div>
-
-      <div class="form-group">
-        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">
-        Send Message
-      </button>
-      <p id="contactMessage" class="contact-feedback"></p>
-    </form>
+    </div>
   </div>
 </section>
-
-

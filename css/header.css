@@ -1,47 +1,48 @@
 /* =========================
-   HEADER / NAVBAR STYLES
+   HEADER / NAVBAR
 ========================= */
 .header {
-  background-color: #7ea9ff;
   position: sticky;
-  top: 0;
+  top: 1rem;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  margin: 3%;
-  padding: 2rem 1.5rem;
+  margin: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  padding: 0.9rem 1.5rem;
+  transition: background 0.3s ease;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   position: relative;
 }
 
-/* ---------------------
-   Logo — centered
---------------------- */
+/* Logo */
 .nav-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-main);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-  /* so it doesn't block clicks */
+  letter-spacing: -0.5px;
 }
 
-/* ---------------------
-   Desktop nav links
---------------------- */
+/* Desktop nav links */
 .nav-left,
 .nav-right {
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,78 +51,108 @@
 .nav-left li a,
 .nav-right li a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-left li a::after,
+.nav-right li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-main);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-left li a:hover,
 .nav-right li a:hover {
-  color: #c3dbff;
+  color: var(--text-primary);
 }
 
-/* ---------------------
-   Hamburger toggle
---------------------- */
+.nav-left li a:hover::after,
+.nav-right li a:hover::after {
+  width: 100%;
+}
+
+/* Active nav link */
+.nav-link.active {
+  color: var(--accent-main) !important;
+}
+
+.nav-link.active::after {
+  width: 100% !important;
+}
+
+/* Hamburger toggle */
 .nav-toggle {
   display: none;
   background: none;
-  border: none;
-  font-size: 1.5rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 1.2rem;
   cursor: pointer;
-  color: #ffffff;
-  padding: 4px 8px;
+  color: var(--text-primary);
+  padding: 6px 10px;
   margin-left: auto;
-  /* push to the right */
   z-index: 10;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-/* ---------------------
-   Mobile dropdown menu
---------------------- */
+.nav-toggle:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-glass);
+}
+
+/* Mobile dropdown */
 .nav-menu {
   display: none;
-  /* hidden by default */
   list-style: none;
   margin: 0;
-  padding: 0;
-
+  padding: 0.5rem;
   flex-direction: column;
-  gap: 0;
-
+  gap: 0.2rem;
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   right: 0;
   width: 200px;
-
-  background-color: #7ea9ff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hover);
   z-index: 999;
 }
 
 .nav-menu li a {
   display: block;
-  padding: 12px 20px;
+  padding: 0.65rem 1rem;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: background 0.2s;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background: var(--bg-glass-hover);
+  color: var(--text-primary);
 }
 
-/* Show when active */
 .nav-menu.active {
   display: flex;
 }
 
-/* ---------------------
-   Responsive breakpoints
---------------------- */
+/* Responsive */
 @media (max-width: 992px) {
 
   .nav-left,
@@ -134,7 +165,6 @@
   }
 
   .nav-logo {
-    /* On mobile, shift logo left since toggle is on the right */
     position: static;
     transform: none;
     flex: 1;
@@ -145,17 +175,16 @@
 @media (max-width: 768px) {
   .header {
     margin: 0.75rem;
-    border-radius: 10px;
   }
 }
 
 @media (max-width: 400px) {
   .header {
     margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .nav-logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }

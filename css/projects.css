@@ -1,0 +1,43 @@
+/* =========================
+   PROJECTS PAGE
+   (previously missing — now created)
+========================= */
+.projects {
+    background: var(--bg-main);
+    padding: var(--section-padding);
+}
+
+/* Intro */
+.projects .education-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+/* Filter bar (future use) */
+.project-filters {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.project-filters button {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-glass);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.project-filters button:hover,
+.project-filters button.active {
+    border-color: var(--border-accent);
+    background: var(--accent-glow);
+    color: var(--accent-main);
+}

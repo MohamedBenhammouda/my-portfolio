@@ -2,56 +2,64 @@
 
   <div class="footer-grid">
 
-    <!-- 1️⃣ LOGO -->
+    <!-- Logo -->
     <div class="footer-col logo-col">
-      <div class=".nav-logo-footer " title="Mohamed Ben Hamouda">MBH</div>
+      <div class="nav-logo-footer">MBH</div>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem; line-height:1.5;">
+        Software Engineer<br>Cybersecurity Researcher
+      </p>
     </div>
 
-   <!-- NAVIGATION -->
+    <!-- Navigation -->
     <div class="footer-col">
-      <a href="#" class="nav-link" data-page="about">About me</a>
+      <h4>Navigate</h4>
+      <a href="#" class="nav-link" data-page="about">About</a>
+      <a href="#" class="nav-link" data-page="experience">Experience</a>
       <a href="#" class="nav-link" data-page="projects">Projects</a>
+      <a href="#" class="nav-link" data-page="education">Education</a>
+      <a href="#" class="nav-link" data-page="skills">Skills</a>
       <a href="#" class="nav-link" data-page="contact">Contact</a>
     </div>
 
-    <!-- MORE -->
+    <!-- Social -->
     <div class="footer-col">
-      <a href="#" class="nav-link" data-page="education">Education</a>
-      <a href="#" class="nav-link" data-page="experience">Experience</a>
-      <a href="#" class="nav-link" data-page="skills">Skills</a>
-    </div>
-
-    <!-- 4️⃣ SOCIAL -->
-    <div class="footer-col">
-      <h4>Find me</h4>
-
+      <h4>Find Me</h4>
       <div class="footer-socials">
-        <a href="#"><img src="assets/icons/linkedin.svg"></a>
-        <a href="#"><img src="assets/icons/facebook.svg"></a>
-        <a href="#"><img src="assets/icons/instagram.svg"></a>
+        <a href="https://linkedin.com/in/mohamed-benhamouda" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/MohamedBenhammouda" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="assets/icons/github.svg" alt="GitHub">
+        </a>
+        <a href="https://www.facebook.com/mohamed.benhamouda.39566" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook">
+          <img src="assets/icons/facebook.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/hamma_benhamouda/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram">
+          <img src="assets/icons/instagram.svg" alt="Instagram">
+        </a>
       </div>
-
-      <a href="https://wa.me/your-number" class="whatsapp">
-        WhatsApp Me
+      <a href="https://wa.me/21699218071" target="_blank" rel="noopener noreferrer" class="whatsapp">
+        💬 WhatsApp Me
       </a>
     </div>
 
-    <!-- 5️⃣ CONTACT FORM -->
-    <div class="footer-col form-col">
-      <form id="contactForm" class="contact-form-footer">
-        <h4>Contact Me</h4>
-
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message..." required></textarea>
-
+    <!-- Contact form -->
+    <div class="footer-col">
+      <h4>Quick Message</h4>
+      <form id="footerContactForm" class="contact-form-footer" novalidate>
+        <input type="text" name="user_name" placeholder="Your Name" autocomplete="name" required>
+        <input type="email" name="user_email" placeholder="Your Email" autocomplete="email" required>
+        <textarea name="message" rows="3" placeholder="Your Message…" required></textarea>
         <button type="submit">Send</button>
+        <p id="footerContactMessage" style="font-size:0.8rem;min-height:1rem;margin-top:4px;" aria-live="polite"></p>
       </form>
     </div>
 
   </div>
 
-  <!-- bottom -->
   <div class="footer-bottom">
     <p>&copy; 2026 Mohamed Ben Hamouda. All rights reserved.</p>
   </div>

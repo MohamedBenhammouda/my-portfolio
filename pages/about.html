@@ -1,144 +1,176 @@
+<section id="about" class="about">
 
-<section id="about" class="section about">
-  <div class="container about-grid">
+  <!-- HERO -->
+  <div class="about-grid container">
 
-        <div class="about-hero">
+    <!-- Text -->
+    <div class="about-text reveal-fade">
+      <span class="about-eyebrow">Software Engineer · Cybersecurity</span>
+      <h1>Mohamed<br><span>Ben Hamouda</span></h1>
+      <h2>Blue Team · SOC · DevSecOps</h2>
+      <p>
+        I build secure systems and explore intelligent technologies. Over the past year I've delivered
+        end-to-end projects for both public and private companies as a freelancer. Trust is at the core
+        of everything I do — I combine technical depth with strategic thinking to grow toward C-level leadership.
+      </p>
 
-          <div class="about-text">
-            <h1>Mohamed Ben Hammouda</h1>
-            <h2>Software Engineer</h2>
-            <p>
-            Hi, I’m a software engineer who builds secure systems and explores intelligent technologies. Over the past year, I’ve gained freelance experience working with both public and private companies, delivering projects end-to-end. Trust is at the core of everything I do. I’m continuously learning new AI technologies and expanding my perspective through business and HR reading. My long-term goal is to grow into management and C-level roles, combining technical expertise with strong strategic vision.
-            </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-number">2+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Companies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+      </div>
+
+      <!-- VISITOR STATS WIDGET — visible only when URL contains #stats -->
+      <div id="visitor-widget" class="visitor-widget hidden" aria-label="Visitor statistics">
+        <div class="visitor-widget-header">
+          <span class="visitor-widget-title">📊 Visitor Stats</span>
+          <span id="visitor-widget-status" class="visitor-widget-status">Loading…</span>
+        </div>
+        <div class="visitor-widget-numbers">
+          <div class="visitor-stat">
+            <span id="vw-total" class="visitor-stat-number">—</span>
+            <span class="visitor-stat-label">Total Visits</span>
           </div>
-
-          <img src="assets/images/MEDphoto1.png" alt="About Me Image">
-          <div class="socials">
-  
-          <span>Find me on</span>
-          <br>
-
-            <a href="#" target="_blank">
-              <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-            </a>
-
-            <a href="#" target="_blank">
-              <img src="assets/icons/facebook.svg" alt="Facebook">
-            </a>
-
-            <a href="#" target="_blank">
-              <img src="assets/icons/instagram.svg" alt="Instagram">
-            </a>
+          <div class="visitor-stat">
+            <span id="vw-today" class="visitor-stat-number">—</span>
+            <span class="visitor-stat-label">Today</span>
+          </div>
+          <div class="visitor-stat">
+            <span id="vw-week" class="visitor-stat-number">—</span>
+            <span class="visitor-stat-label">This Week</span>
           </div>
         </div>
+        <div class="visitor-chart-wrap">
+          <div id="vw-chart" class="visitor-chart" aria-label="Last 7 days bar chart"></div>
+          <div class="visitor-chart-labels" id="vw-labels"></div>
+        </div>
+      </div>
+
+      <div class="about-cta">
+        <a href="#" class="btn-primary nav-link" data-page="contact">Get in Touch</a>
+        <a href="#" class="btn-outline nav-link" data-page="projects">View Projects</a>
+      </div>
+
+      <div class="socials">
+        <span>Find me on</span>
+        <a href="https://linkedin.com/in/mohamed-benhamouda" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/MohamedBenhammouda" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="assets/icons/github.svg" alt="GitHub">
+        </a>
+        <a href="https://www.facebook.com/mohamed.benhamouda.39566" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook">
+          <img src="assets/icons/facebook.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/hamma_benhamouda/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram">
+          <img src="assets/icons/instagram.svg" alt="Instagram">
+        </a>
+      </div>
     </div>
-  
+
+    <!-- Image -->
+    <div class="about-image-wrap reveal-fade">
+      <img src="assets/images/MEDphoto1.png" alt="Mohamed Ben Hamouda — Software Engineer">
+    </div>
+
+  </div>
+
 </section>
 
-
+<!-- SERVICES -->
 <section class="services">
-
-  <div class="services-header">
-    <h3>What I Do</h3>
+  <div class="services-header reveal-fade">
+    <p class="eyebrow">What I Do</p>
     <h2>Services</h2>
-    <p>
-      I design and build secure, intelligent, and scalable digital solutions 
-      from concept to deployment.
-    </p>
+    <p>I design and build secure, intelligent, and scalable digital solutions — from concept to deployment.</p>
   </div>
 
   <div class="services-grid">
-
-    <div class="service-card">
-      <h4>Web Development</h4>
-      <p>Building modern, responsive, and high-performance web applications.</p>
-    </div>
-
-    <div class="service-card">
+    <div class="service-card reveal-fade">
+      <div class="service-icon">🛡️</div>
       <h4>Secure Systems</h4>
-      <p>Designing and implementing secure architectures to protect data and systems.</p>
+      <p>Designing and implementing secure architectures to protect data and systems from modern threats.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service-card reveal-fade">
+      <div class="service-icon">🤖</div>
       <h4>AI Integration</h4>
-      <p>Integrating intelligent features to enhance automation and decision-making.</p>
+      <p>Integrating intelligent features for automation, anomaly detection, and decision-making.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service-card reveal-fade">
+      <div class="service-icon">🌐</div>
+      <h4>Web Development</h4>
+      <p>Building modern, responsive, and high-performance web applications end-to-end.</p>
+    </div>
+    <div class="service-card reveal-fade">
+      <div class="service-icon">🎨</div>
       <h4>UI/UX Design</h4>
-      <p>Designing clean and user-friendly interfaces using tools like Figma.</p>
+      <p>Designing clean, user-friendly interfaces with tools like Figma and modern CSS.</p>
     </div>
-    <div class="service-card">
-        <h4>Business Analysis</h4>
-        <p>Understanding business requirements and transforming them into strategic and scalable technical solutions.</p>
+    <div class="service-card reveal-fade">
+      <div class="service-icon">📊</div>
+      <h4>Business Analysis</h4>
+      <p>Translating business requirements into strategic, scalable technical solutions.</p>
     </div>
-    <div class="service-card">
-        <h4>Mobile Development</h4>
-        <p>Understanding business requirements and transforming them into strategic and scalable technical solutions.</p>
+    <div class="service-card reveal-fade">
+      <div class="service-icon">📱</div>
+      <h4>Mobile Development</h4>
+      <p>Building cross-platform mobile applications with a focus on performance and UX.</p>
     </div>
   </div>
-
 </section>
 
+<!-- COMPANIES -->
 <section class="companies">
-  <h3>Companies I’ve Worked With</h3>
+  <h3>Companies I've Worked With</h3>
+  <div class="companies-slider">
 
-<div class="companies-slider">
+    <a href="https://imedrasphere.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+      <div class="company-card">
+        <img src="assets/icons/imedra.png" alt="Imedra Sphere">
+        <span class="tag">Private</span>
+      </div>
+    </a>
 
-  <a href="https://imedrasphere.com/" target="_blank" class="company-link">
-    <div class="company-card">
-      <img src="assets/icons/imedra.png" alt="Imedra">
-      <span class="tag">Private</span>
-    </div>
-  </a>
+    <a href="https://www.ancs.tn/" target="_blank" rel="noopener noreferrer" class="company-link">
+      <div class="company-card">
+        <img src="assets/icons/ancs.png" alt="ANCS — National Cybersecurity Agency">
+        <span class="tag">Public</span>
+      </div>
+    </a>
 
-  <a href="https://www.ancs.tn/" target="_blank" class="company-link">
-    <div class="company-card">
-      <img src="assets/icons/ancs.png" alt="ANCS">
-      <span class="tag">Public</span>
-    </div>
-  </a>
+    <a href="#" class="company-link">
+      <div class="company-card">
+        <img src="assets/icons/STERealenBatiment.png" alt="Realen Batiment">
+        <span class="tag">Private</span>
+      </div>
+    </a>
 
-  <a href="#" target="_blank" class="company-link">
-    <div class="company-card">
-      <img src="assets/icons/STERealenBatiment.png" alt="Realen Batiment">
-      <span class="tag">Private</span>
-    </div>
-  </a>
-  <a href="https://www.linkedin.com/company/no-breach/posts/?feedView=all" target="_blank" class="company-link">
-    <div class="company-card">
-      <img src="assets/icons/NoBreach.png" alt="Realen Batiment">
-      <span class="tag">Private</span>
-    </div>
-  </a>
-  <a href="https://www.med.tn" target="_blank" class="company-link">
-    <div class="company-card">
-      <img src="assets/icons/logo_med.svg" alt="MED">
-      <span class="tag">Private</span>
-    </div>
-  </a>
+    <a href="https://www.linkedin.com/company/no-breach/posts/?feedView=all" target="_blank" rel="noopener noreferrer"
+      class="company-link">
+      <div class="company-card">
+        <img src="assets/icons/NoBreach.png" alt="NoBreach">
+        <span class="tag">Private</span>
+      </div>
+    </a>
 
-</div>
+    <a href="https://www.med.tn" target="_blank" rel="noopener noreferrer" class="company-link">
+      <div class="company-card">
+        <img src="assets/icons/logo_med.svg" alt="MED">
+        <span class="tag">Private</span>
+      </div>
+    </a>
+
+  </div>
 </section>
-<!--  
-      <div class="accreditations">
-        <span class="accreditation" data-tooltip="International accreditation ensuring engineering quality and global standards.">
-          ABET
-        </span>
-        <span class="accreditation" data-tooltip="Association to Advance Collegiate Schools of Business.">
-          AACSB
-        </span>
-        <span class="accreditation" data-tooltip="Association of MBAs, ensuring excellence in education.">
-          AMBA
-        </span>
-        <span class="accreditation" data-tooltip="European Foundation for Management Development.">
-          EFMD
-        </span>
-      </div>-->
-
-
-
-    <!-- RIGHT: IMAGE 
-    <div class="about-image reveal-fade">
-      <img src="assets/images/MEDphoto.jpeg" alt="Mohamed Ben Hamouda">
-    </div>-->
