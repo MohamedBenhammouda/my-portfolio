@@ -1,19 +1,89 @@
 <section id="projects" class="section projects">
   <div class="container">
-<!-- Intro -->
+    <!-- Intro -->
     <div class="education-intro reveal-fade">
 
       <h2 class="education-intro-title">Hands-On Projects</h2>
-  <p>
-    Over the years, I have worked on diverse academic and practical projects that combine technology, creativity, and problem-solving. 
-    These projects reflect my skills in software development, cybersecurity, automation, and IoT, as well as my ability to collaborate effectively in teams.
-  </p>
-  <p>
-    Each project demonstrates a focus on innovation, real-world applicability, and the integration of modern tools and methodologies. 
-    From building secure automation platforms to designing interactive applications and IoT systems, these experiences highlight my capacity to deliver impactful solutions.
-  </p>
+      <p>
+        Over the years, I have worked on diverse academic and practical projects that combine technology, creativity,
+        and problem-solving.
+        These projects reflect my skills in software development, cybersecurity, automation, and IoT, as well as my
+        ability to collaborate effectively in teams.
+      </p>
+      <p>
+        Each project demonstrates a focus on innovation, real-world applicability, and the integration of modern tools
+        and methodologies.
+        From building secure automation platforms to designing interactive applications and IoT systems, these
+        experiences highlight my capacity to deliver impactful solutions.
+      </p>
     </div>
     <h2 class="section-title reveal-fade">Projects</h2>
+    <!-- FULL-STACK CUSTOM CMS -->
+    <article class="project reveal-project">
+      <header class="project-header">
+        <h3>Full-Stack Custom CMS for Corporate Website</h3>
+        <span class="project-date">Nov 2024 – Feb 2025</span>
+        <span class="project-tech">React · Node.js · Express.js · JSON File Database · REST API</span>
+      </header>
+
+      <p class="project-summary">
+        Architected and developed a complete, end-to-end Content Management System (CMS) from scratch to power a dynamic
+        corporate website. The project involved building a responsive React frontend for content consumption and
+        administration, backed by a robust Node.js and Express REST API utilizing a custom JSON file-based database for
+        lightweight, file-system data persistence.
+      </p>
+
+      <div class="project-block">
+        <h4>Backend Architecture & API Development</h4>
+        <ul>
+          <li><strong>Express.js REST API:</strong> Designed and implemented a comprehensive RESTful API to handle all
+            CRUD
+            operations for website content, including pages, blog posts, team members, and services.</li>
+          <li><strong>Custom JSON Database:</strong> Engineered a lightweight data persistence layer using structured
+            JSON
+            files. Implemented asynchronous file read/write operations with built-in data validation and file-locking
+            mechanisms to prevent race conditions during concurrent updates.</li>
+          <li><strong>Middleware & Security:</strong> Integrated Express middleware for CORS, JSON body parsing, request
+            logging, and custom global error handling to ensure API reliability and secure data transmission.</li>
+          <li><strong>MVC Structure:</strong> Structured the backend using the Model-View-Controller pattern to maintain
+            a
+            clean separation of concerns, resulting in highly maintainable and scalable server-side code.</li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <h4>Frontend & Admin Dashboard (React)</h4>
+        <ul>
+          <li><strong>Dynamic Public Website:</strong> Built a fast, SEO-friendly public-facing website using React,
+            fetching content dynamically from the backend API to render pages without hardcoding HTML.</li>
+          <li><strong>Admin CMS Dashboard:</strong> Developed a secure, intuitive administrative panel allowing
+            non-technical staff to create, edit, publish, and delete website content seamlessly.</li>
+          <li><strong>State Management & Routing:</strong> Utilized React Router for seamless single-page application
+            (SPA)
+            navigation and React Context API for global state management, handling user sessions and UI themes.</li>
+          <li><strong>Rich Text & Media Handling:</strong> Integrated a rich text editor for blog posts and implemented
+            an
+            image URL management system to handle visual assets and formatting dynamically.</li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <h4>Key Features & System Optimization</h4>
+        <ul>
+          <li><strong>Real-Time Preview:</strong> Implemented a live-preview feature in the admin dashboard, allowing
+            content creators to see exactly how changes would appear on the public site before finalizing publication.
+          </li>
+          <li><strong>Data Seeding & Migration:</strong> Created automated Node.js utility scripts to seed the JSON
+            database
+            with initial corporate data and handle schema migrations as project requirements evolved.</li>
+          <li><strong>Performance Tuning:</strong> Optimized React component rendering using memoization and implemented
+            API
+            response caching on the frontend to minimize redundant network requests and improve load times.</li>
+          <li><strong>End-to-End Testing:</strong> Conducted rigorous testing across both frontend and backend to ensure
+            data integrity, proper error handling, and a bug-free user experience across all devices.</li>
+        </ul>
+      </div>
+    </article>
 
     <!-- DIGITAL FORENSIC AUTOMATION -->
     <article class="project reveal-project">
@@ -23,14 +93,18 @@
       </header>
 
       <p class="project-summary">
-        Designed a secure and automated forensic platform for endpoint investigation, threat verification, and evidence correlation. The platform uses a dual-layer architecture to isolate workspace and analysis environments, ensuring safety, accuracy, and scalability.
+        Designed a secure and automated forensic platform for endpoint investigation, threat verification, and evidence
+        correlation. The platform uses a dual-layer architecture to isolate workspace and analysis environments,
+        ensuring safety, accuracy, and scalability.
       </p>
 
       <div class="project-block">
         <h4>Architecture Overview</h4>
         <ul>
-          <li><strong>Isolated Workspace Layer:</strong> VirtualBox VMs with Host-Only networking for safe file handling.</li>
-          <li><strong>Endpoint Investigation Layer:</strong> Automated artifact collection, anomaly detection, and threat verification.</li>
+          <li><strong>Isolated Workspace Layer:</strong> VirtualBox VMs with Host-Only networking for safe file
+            handling.</li>
+          <li><strong>Endpoint Investigation Layer:</strong> Automated artifact collection, anomaly detection, and
+            threat verification.</li>
           <li>Implemented in Python, Flask, and PyTorch.</li>
         </ul>
       </div>
@@ -69,7 +143,8 @@
       </header>
 
       <p class="project-summary">
-        Developed a machine learning system to automatically detect phishing URLs and emails. The project focused on feature extraction, classifier optimization, and real-world applicability.
+        Developed a machine learning system to automatically detect phishing URLs and emails. The project focused on
+        feature extraction, classifier optimization, and real-world applicability.
       </p>
 
       <div class="project-block">
@@ -101,7 +176,8 @@
       </header>
 
       <p class="project-summary">
-        Served as Scrum Master, managing the team in agile sprints, documentation, and project delivery. The game was designed as an interactive puzzle adventure emphasizing cybersecurity concepts.
+        Served as Scrum Master, managing the team in agile sprints, documentation, and project delivery. The game was
+        designed as an interactive puzzle adventure emphasizing cybersecurity concepts.
       </p>
 
       <div class="project-block">
